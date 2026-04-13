@@ -1,0 +1,80 @@
+{
+  "expo": {
+    "name": "SecureGuard",
+    "slug": "secureguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "secureguard",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0E1A"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.secureguard.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SecureGuard captures intruder photos when login fails.",
+        "NSLocationWhenInUseUsageDescription": "SecureGuard uses location to track intruder position.",
+        "NSLocationAlwaysUsageDescription": "SecureGuard uses location to track intruder position.",
+        "NSPhotoLibraryUsageDescription": "SecureGuard saves captured photos to your library."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0E1A"
+      },
+      "package": "com.secureguard.app",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "SEND_SMS",
+        "READ_CONTACTS",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow SecureGuard to access your camera for intruder detection."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow SecureGuard to use your location for intruder alerts."
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4F46E5",
+          "sounds": []
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
