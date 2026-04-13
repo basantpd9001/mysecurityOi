@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ViewStyle, TouchableOpacity } from 'react-native';
+import { View, ViewStyle, TouchableOpacity } from 'react-native';
 import { useTheme } from '@/config/ThemeProvider';
 
 interface CardProps {
@@ -28,11 +28,7 @@ export function Card({ children, style, pressable = false, onPress, padding }: C
 
   if (pressable && onPress) {
     return (
-      <TouchableOpacity
-        onPress={onPress}
-        activeOpacity={0.85}
-        style={[cardStyle, style]}
-      >
+      <TouchableOpacity onPress={onPress} activeOpacity={0.85} style={[cardStyle, style]}>
         {children}
       </TouchableOpacity>
     );
@@ -40,5 +36,3 @@ export function Card({ children, style, pressable = false, onPress, padding }: C
 
   return <View style={[cardStyle, style]}>{children}</View>;
 }
-
-const styles = StyleSheet.create({});

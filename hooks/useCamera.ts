@@ -29,7 +29,8 @@ export function useCamera(): UseCameraReturn {
   const takePhoto = useCallback(
     async (
       cameraRef: React.RefObject<CameraView>,
-      _facing: 'front' | 'back' = 'front',
+      // facing direction is reserved for future use when switching cameras programmatically
+      facing: 'front' | 'back' = 'front', // eslint-disable-line @typescript-eslint/no-unused-vars
     ): Promise<PhotoResult | null> => {
       if (!cameraRef.current) {
         console.error('Camera ref is not available');
